@@ -1,3 +1,21 @@
 {
-     "C_Cpp.errorSquiggles": "Disabled"
+     "C_Cpp.errorSquiggles": "Disabled",
+     "files.associations": {
+          "Power": "python",
+          "Palindrome_String": "python",
+          "Palindrome_Number": "python",
+          "Fibonacci": "python",
+          "Bubble_Sort": "python",
+          "Armstrong": "python",
+          "plottig": "python",
+          "Krishnamutry": "python",
+          "Binary_Search": "python",
+          "HCF": "python",
+          "NCR": "python",
+          "factorial": "python",
+          "stack": "java",
+          "App": "python",
+          "MYSQL": "python",
+          "iostream": "cpp"
+     }
 }
