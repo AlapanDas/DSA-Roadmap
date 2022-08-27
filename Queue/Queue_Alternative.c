@@ -14,7 +14,6 @@ void enqueue ()
     {
       printf ("OVERFLOW");
     }
-
   else
     {
       rear++;

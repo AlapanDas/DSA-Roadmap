@@ -117,6 +117,22 @@ void insert_at_end(int data)
      }
 }
 
+void reverse()
+{
+     node *prev,*curr,*temp=new node();
+     curr=head;
+     prev=NULL;
+     temp=NULL;
+     while (curr!=NULL)
+     {
+          temp=curr->next;
+          curr->next=prev;
+          prev=curr;
+          curr=temp;
+     }
+     head=prev->next;
+}
+
 void delete_at_any(int count)
 {     
      node* ptr1=head;     
