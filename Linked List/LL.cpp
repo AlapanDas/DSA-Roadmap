@@ -69,13 +69,12 @@ void insert_at_start(int data)
 
 void insert_at_any(node* prev,int data)
 {
-     if(prev==NULL)
+     if(prev==__null)
           cout<<"NULL Pointer";
      node* newnode= new node();
      newnode->data=data;
      newnode->next=prev->next;
-     prev->next=newnode;
-     
+     prev->next=newnode;     
 }
 
 void insert_any(int count,int data)

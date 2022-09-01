@@ -3,15 +3,36 @@
 
 struct node
 {
-     struct node* prev;
      int data;
      struct node* next;
 };
-struct node* head=NULL;
+struct node* tail=NULL;
+ 
+void insert(int data)
+{
+     struct node* ptr=(struct node*)malloc(sizeof(struct node));
+     if(tail==NULL)
+     {          
+          ptr->data=data;
+          tail=ptr;
+          tail->next=ptr; 
+     }
+     else
+     {
+          ptr->data=data;
+          ptr->next=tail->next;
+          
+     }
+}
 void display()
 {
-     struct node* ptr=head;
-     while(ptr->next!=NULL)
+     struct node* ptr=tail;
+     if (tail==NULL)
+     {
+          printf("Empty\n");
+          exit(1);
+     }
+     while(ptr!=NULL)
      {
           printf("%d",ptr->data);
           ptr=ptr->next;
@@ -19,12 +40,7 @@ void display()
 }
 int main()
 {
-     head=(struct node*)malloc(sizeof(struct node));
-     head->prev=NULL;
-     head->data=25;
-     struct node* ptr=(struct node*)malloc(sizeof(struct node));
-     head->next=ptr->prev;
-     ptr->data=3;
-     ptr->next=NULL;
+     display();
+     insert(12);
      display();
 }

@@ -1,7 +1,9 @@
 #include<bits/stdc++.h>
 using namespace std;
-int arr[1000];
-int n=1000,top=1,element;
+#define n 1000
+int arr[n];
+int top=1,element;
+
 void push(int element)
 {
      if(top>=n-1)
@@ -60,10 +62,10 @@ int main()
 //     {
 //          driver();
 //     }
-display();
-    push(13);
-    push(23);
-    push(33);
-    pop();
-    display();
+     display();
+     push(13);
+     push(23);
+     push(33);
+     pop();
+     display();
 }
