@@ -1,6 +1,5 @@
 #include<stdio.h>
 #include<stdlib.h>
-#define endl printf("\n");
 
 struct node
 {
@@ -8,7 +7,7 @@ struct node
      struct node* left;
      struct node* right;
 };
-
+struct node* headnode;
 struct node* createnode()
 {
      int data;
@@ -23,7 +22,6 @@ struct node* createnode()
      newnode->right=createnode();
      return newnode;
 }
-
 void inorder(struct node* ptr)
 {
      if(ptr==NULL)
@@ -48,15 +46,29 @@ void postorder(struct node* ptr)
      postorder(ptr->right);
      printf("%d",ptr->data);
 }
+struct node* create(int x)
+{
+     struct node* ptr=(struct node*)malloc(sizeof(struct node));
+     ptr->data=x;
+     ptr->left=ptr->right=NULL;     
+}
+struct node* insert(struct node* ptr,int x)
+{
+     if(ptr==NULL)
+          return create(x);
+     if(ptr->data>x)
+          ptr->left=insert(ptr->left,x);
+     else if(ptr->data<x)
+          ptr->right=insert(ptr->right,x);
+     return ptr;
+}
 int main()
 {
-     printf("Enter Root Node");
-     struct node* headnode=createnode();
+     printf("Enter Head Node");
+     headnode=createnode();
+     printf("Enter Element to be inserted");
+     int data;
+     scanf("%d",&data);  
+     insert(headnode,data);
      inorder(headnode);
-     endl   
-     postorder(headnode);
-     endl
-     preorder(headnode);
-     endl
-     return 0;
 }
