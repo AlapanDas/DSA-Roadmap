@@ -91,7 +91,6 @@ void insert_any(int count,int data)
      ptr->next=ptr1->next;
      ptr1->next=ptr;
 }
-
 void insert_at_end(int data)
 {
      node* ptr= new node();
@@ -114,22 +113,6 @@ void insert_at_end(int data)
           }
           
      }
-}
-
-void reverse()
-{
-     node *prev,*curr,*temp=new node();
-     curr=head;
-     prev=NULL;
-     temp=NULL;
-     while (curr!=NULL)
-     {
-          temp=curr->next;
-          curr->next=prev;
-          prev=curr;
-          curr=temp;
-     }
-     head=prev->next;
 }
 
 void delete_at_any(int count)
@@ -162,14 +145,6 @@ void delete_at_any(int count)
 
 int main()
 {
-//      insert_at_start(1);
-//      insert_at_any(head,2);
-//      insert_at_any(head->next,3);
-//      insert_at_end(4);
-//      delete_first();
-//      display(head);
-//      delete_last();
-//      display(head);
      int ch,flag=-1,data,pos;
      while(1)
      {     

@@ -15,8 +15,6 @@ void enqueue(int data)
           queue[rear]=data;
      }     
 } 
-// 1 2 3
-// 0 1 2
 void dequeue()
 {
      if(front==-1 || front>rear)
@@ -44,12 +42,6 @@ void display()
 int main()
 {
      front=-1,rear=-1;
-     // display();
-     // enqueue(10);1
-     // dequeue();
-     // enqueue(10);
-     // enqueue(20);
-     // display();
      while(1)
      {
         printf("\n1.Enqueue Operation\n");

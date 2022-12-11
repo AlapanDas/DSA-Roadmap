@@ -4,7 +4,7 @@
 int front = -1;
 int rear= -1;
 int queue[N];
-
+ 
 void enqueue(int data)
 {
      if(front==-1 && rear==-1)
@@ -50,7 +50,6 @@ void display()
           printf("Empty Queue\n");
      else
      {
-          // printf("%d",queue[front]);
           for (i = front; i != rear; i = (i + 1) % N)
           {
                printf("%d",queue[i]);

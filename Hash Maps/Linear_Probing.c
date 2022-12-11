@@ -1,45 +1,41 @@
 #include <stdio.h>
 #include <stdlib.h>
 #define m 100
-#define upper 500
+#define upper 200
 #define lower 100
 
-struct node
+int arr[m] = {0};
+int insert(int value)
 {
-     int data;
-     struct node *next;
-};
-struct node *arr[m] = {0};
-
-void insert(int value)
-{
-     struct node *newNode = malloc(sizeof(struct node));
-     newNode->data = value;
-     newNode->next = NULL;
-
-     int key = value % m;
-     while (5)
+     int index;
+     int hash=value%m;
+     for (int i = 0; i < m; i++)
      {
-          if (arr[key] == 0)
-               arr[key] = newNode;
-          else
-               key = (key + 1) % m;
-     }
-}
-int search(int data)
-{
-     int count = 0;
-     int key = data % m;
-     while (1)
-     {    
-          count++;
-          if (arr[key] == data || arr[key] == 0)
+          index=(hash+i)%m;
+          if (arr[index]==0)
+          {
+               arr[index]=value;
                break;
-          else
-               key = (key + 1) % m;
+          }
      }
-     return count;
 }
+int search(int value)
+{
+     int index;
+     int i=0,count=0;
+     int hash=value%m;
+     for ( i = 0; i < m; i++)
+     {
+          count++;
+          index=(hash+i)%m;
+          if (arr[index]==value && arr[index]==0)
+          {
+               return count;
+               break;
+          }
+     }
+}
+
 
 int main()
 {
