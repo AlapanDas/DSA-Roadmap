@@ -143,6 +143,15 @@ void delete_at_any(int count)
      }
 }
 
+void delete_nth_end()
+{
+     node *ptr=head;
+     while (ptr->next->next!=NULL)
+     {
+          if()
+     }
+     
+}
 int main()
 {
      int ch,flag=-1,data,pos;

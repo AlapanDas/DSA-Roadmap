@@ -10,21 +10,6 @@ void swap(int *a, int *b)
      *a = *b;
      *b = temp;
 }
-int partition(int arr[],int low,int high)
-{
-     int pivot=arr[high];
-     int i=low-1;
-     for (int j = low; j < high-1; j++)
-     {
-          cnt++;
-          if(arr[j]<pivot)    {
-               i++;
-               swap(&arr[i+1],&arr[high]);
-          }
-     }
-     cnt+=cnt;
-     return (i+1);
-}
 void merge_array(int array[], int const left, int const mid,int const right)
 {
     auto const sAone = mid - left + 1;
@@ -62,16 +47,6 @@ void merge_array(int array[], int const left, int const mid,int const right)
     delete[] leftArray;
     delete[] rightArray;
 }
- 
-int quicksort(int arr[],int low,int high)
-{
-     if(low<high)
-     {
-          int p=partition(arr,low,high);
-          quicksort(arr,low,p-1);
-          quicksort(arr,p+1,high);
-     }
-}
 int mergesort(int arr[],int low,int high)
 {
      if(low>=high)
@@ -81,6 +56,31 @@ int mergesort(int arr[],int low,int high)
      mergesort(arr,mid+1,high);
      merge_array(arr,low,mid,high);
 }
+int quicksort(int arr[],int low,int high)
+{
+     if(low<high)
+     {
+          int p=partition(arr,low,high);
+          quicksort(arr,low,p-1);
+          quicksort(arr,p+1,high);
+     }
+}
+int partition(int arr[],int low,int high)
+{
+     int pivot=arr[high];
+     int i=low-1;
+     for (int j = low; j < high-1; j++)
+     {
+          cnt++;
+          if(arr[j]<pivot)    {
+               i++;
+               swap(&arr[i+1],&arr[high]);
+          }
+     }
+     cnt+=cnt;
+     return (i+1);
+}
+
 int main()
 {
 
